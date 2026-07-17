@@ -20,6 +20,8 @@ const
     EnterCharCode = 13;
     EscapeCharCode = 27;    
     SpaceCharCode = 32;
+    CyrillicFirstByteCode208 = 208;
+    CyrillicFirstByteCode209 = 209;
     LineFeedCharCode = 10;  
     BackSpaceCharCode = 8;
     NoParamErrorMsg = 'Please specify a filename';
@@ -62,8 +64,9 @@ begin
     begin
         symb := ReadKey;
         key := -ord(symb);
-    end 
-    else if (ord(symb) = 208) or (ord(symb) = 209) then
+    end   
+    else if (ord(symb) = CyrillicFirstByteCode208) or 
+           (ord(symb) = CyrillicFirstByteCode209) then
     begin
         symb := ReadKey;
         key := ord(symb)
